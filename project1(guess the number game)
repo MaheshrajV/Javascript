@@ -1,0 +1,35 @@
+<center>
+    <h1 style="background-color: red;">Guess the number from 1 to 10</h1><br>
+    <input type="number" id="one">
+    <button onclick="check()" style="color: blue;">Check</button>
+    <p id="result" style="color:violet;">You are wrong/right</p>
+    <img src="/guess-the-number_3.png" alt="" style="height: 400px;height: 400px;"><br><br>
+    <h2><score id="score" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">YOUR SCORE:10</score></h2>
+</center>
+<style>
+    h1{
+        display:inline-block
+    }
+    center{
+        background-color: bisque;
+    }
+</style>
+<script>
+    var a=document.getElementById("one")
+    var b=document.getElementById("result")
+    var sco=document.getElementById("score")
+    var c= Math.floor(Math.random()*10)+1
+    var score=10
+    function check(){
+        var inum=a.value
+        if(c==inum){
+            b.textContent="you are Right"
+            alert("you Won")
+        }
+        else{
+            score=score-1
+            sco.textContent="YOUR SCORE:"+score
+            b.textContent="you are Wrong"
+        }
+    }
+</script>
